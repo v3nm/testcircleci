@@ -11,7 +11,7 @@ jobs:
       - run:
           name: linter-check
           command: 'eslint ~/project/test.js'
-workflow:
+workflows:
   version: 2
   check_and_test:
     jobs:
