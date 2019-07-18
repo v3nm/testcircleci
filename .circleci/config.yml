@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: install-eslint
-          command: 'npm i -g eslint'
+          command: 'sudo npm i -g eslint'
       - run:
           name: linter-check
           command: 'eslint ../test.js'
