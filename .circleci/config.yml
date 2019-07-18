@@ -10,4 +10,4 @@ jobs:
           command: 'sudo npm i -g eslint'
       - run:
           name: linter-check
-          command: 'eslint ../test.js'
+          command: 'eslint ~/project/test.js'
