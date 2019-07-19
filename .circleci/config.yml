@@ -10,7 +10,7 @@ jobs:
           command: 'sudo npm i -g eslint'
       - run:
           name: linter-check
-          command: 'eslint ~/project/test.js'
+          command: 'eslint ~/project/*.js'
 workflows:
   version: 2
   check_and_test:
