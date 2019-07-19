@@ -3,3 +3,4 @@ logger.info(12);
 console.log("hello");
 if(1)
     console.log(1);
+logger.info("hello");
