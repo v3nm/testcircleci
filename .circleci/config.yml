@@ -8,3 +8,11 @@ jobs:
       - run:
           name: install-eslint
           command: 'sudo npm i -g eslint'
+      - run:
+          name: linter-check
+          command: 'eslint ~/project/*.js'
+workflows:
+  version: 2
+  check_and_test:
+    jobs:
+      - linter-check
