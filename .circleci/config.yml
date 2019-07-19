@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  linter-check:
     docker:
       - image: circleci/node:10.16.0
     steps:
