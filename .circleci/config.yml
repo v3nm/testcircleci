@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  linter-check:
+  build:
     docker:
       - image: circleci/node:10.16.0
     steps:
@@ -8,11 +8,3 @@ jobs:
       - run:
           name: install-eslint
           command: 'sudo npm i -g eslint'
-      - run:
-          name: linter-check
-          command: 'eslint ~/project/test.js'
-workflows:
-  version: 2
-  check_and_test:
-    jobs:
-      - linter-check
