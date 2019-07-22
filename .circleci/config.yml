@@ -5,9 +5,14 @@ jobs:
       - image: circleci/node:10.16.0
     steps:
       - checkout
+      - restore_cache:
+          key: v1-{{ checksum "eslint" }}
       - run:
           name: install-eslint
           command: 'sudo npm i -g eslint'
+      - save_cache:
+          key: v1-{{ checksum "eslint" }}
+          path: "linter"
       - run:
           name: linter-check
           command: 'eslint ~/project/*.js'
