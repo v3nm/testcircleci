@@ -13,10 +13,9 @@ jobs:
       - save_cache:
           key: v1-{{ checksum "~/project/package.json" }}
           paths: "~/project/node_modules"
-      - run: ls ~/project/node_module
       - run:
           name: linter-check
-          command: '~/project/node_module/eslint/bin/eslint.js ~/project/'
+          command: '~/project/node_modules/eslint/bin/eslint.js ~/project/'
 workflows:
   version: 2
   check_and_test:
