@@ -12,7 +12,7 @@ jobs:
           command: 'npx install-peerdeps eslint-config-airbnb | sudo npm i -g eslint'
       - save_cache:
           key: v1-{{ checksum "/usr/local/bin/eslint" }}
-          paths: "/usr/local/bin"
+          paths: "/usr/local/bin/eslint"
       - run:
           name: linter-check
           command: 'eslint ~/project/*.js'
