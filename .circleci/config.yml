@@ -6,13 +6,13 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: v1-{{ checksum "~/usr/local/bin/eslint" }}
+          key: v1-{{ checksum "/usr/local/bin/eslint" }}
       - run:
           name: install-eslint
           command: 'sudo npm i -g eslint'
       - save_cache:
-          key: v1-{{ checksum "~/usr/local/bin/eslint" }}
-          paths: "~/usr/local/bin"
+          key: v1-{{ checksum "/usr/local/bin/eslint" }}
+          paths: "/usr/local/bin"
       - run:
           name: linter-check
           command: 'eslint ~/project/*.js'
