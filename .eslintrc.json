@@ -6,7 +6,6 @@
         "jest": true,
         "es6": true
     },
-    "extends": "airbnb",
     "parserOptions": {
         "ecmaVersion": 6,
       },
