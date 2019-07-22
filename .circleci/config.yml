@@ -13,7 +13,7 @@ jobs:
       - save_cache:
           key: v1-{{ checksum "eslint" }}
           paths: "linter"
-      - run: | which eslint
+      - run: "which eslint"
       - run:
           name: linter-check
           command: 'eslint ~/project/*.js'
