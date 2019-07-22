@@ -9,7 +9,7 @@ jobs:
           key: v1-{{ checksum "/usr/local/bin/eslint" }}
       - run:
           name: install-eslint
-          command: 'sudo npm i -g eslint'
+          command: 'npx install-peerdeps eslint-config-airbnb | sudo npm i -g eslint'
       - save_cache:
           key: v1-{{ checksum "/usr/local/bin/eslint" }}
           paths: "/usr/local/bin"
