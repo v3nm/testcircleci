@@ -12,7 +12,7 @@ jobs:
           command: 'sudo npm i -g eslint'
       - save_cache:
           key: v1-{{ checksum "eslint" }}
-          path: "linter"
+          paths: "linter"
       - run:
           name: linter-check
           command: 'eslint ~/project/*.js'
