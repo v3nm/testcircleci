@@ -4,18 +4,17 @@
         "es6": true,
         "node": true
     },
+    "extends": "airbnb-base",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 2016
+        "ecmaVersion": 2018
     },
     "rules": {
         "import/no-unresolved": "off",
-        "import/no-dynamic-require": "off",
         "indent": ["error", 4, {"SwitchCase": 1}],
-        "max-statements": ["error", { "max": 50 }],
         "no-param-reassign": ["error", { "props": false }],
         "comma-dangle": ["error", {
             "arrays": "always-multiline",

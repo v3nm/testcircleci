@@ -5,12 +5,17 @@ jobs:
       - image: circleci/node:10.16.0
     steps:
       - checkout
+      - restore_cache:
+          key: v1-{{ checksum "~/project/package.json" }}
       - run:
-          name: install-eslint
-          command: 'sudo npm i -g eslint'
+          name: install-airbnb
+          command: cd ~/project && npm install
+      - save_cache:
+          key: v1-{{ checksum "~/project/package.json" }}
+          paths: "~/project/node_modules"
       - run:
           name: linter-check
-          command: 'eslint ~/project/*.js'
+          command: '~/project/node_modules/eslint/bin/eslint.js ~/project/'
 workflows:
   version: 2
   check_and_test:
